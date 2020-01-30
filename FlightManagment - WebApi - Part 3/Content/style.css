@@ -94,8 +94,8 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0 auto;
   margin-top:15px;
   margin-bottom: 20px;
-  padding-left: 3px;
-  padding-right: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .gtco-nav {
@@ -445,7 +445,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-cover {
-  height: 900px;
+  height: 820px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

@@ -2,11 +2,11 @@ let ajax_inprocess = false
 
 // Send Ajax On The Sent Url And Get Matching Flights.
 function getMatchingFlights(sentUrl) {
-     if (ajax_inprocess == false) {
-         ajax_inprocess = true
-         window.clearTimeout(refreshPageTimer)
-         refreshPageTimer = window.setTimeout("location.reload()", 1000 * 60 * 5)
+    if (ajax_inprocess == false) {
          myUrl = sentUrl
+         ajax_inprocess = true
+         clearTimeout(refreshPageTimer)
+         refreshPageTimer = setTimeout("location.reload()", 1000 * 60 * 5)
          $.ajax({
             url: myUrl
         }).then(function (data) {

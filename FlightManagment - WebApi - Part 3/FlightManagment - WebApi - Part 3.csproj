@@ -195,9 +195,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\icomoon.css" />
-    <Content Include="Content\Images\Depar Flight.gif" />
+    <Content Include="Content\Images\card_place_holder.png" />
     <Content Include="Content\Images\Depar_Flight.jpg" />
-    <Content Include="Content\Images\Depar_Flight1.jpg" />
     <Content Include="Content\Images\Land_Flight.jpg" />
     <Content Include="Content\Images\Logos\Air-India-Logo.png" />
     <Content Include="Content\Images\Logos\All-Nippon-Airways-Logo.png" />
@@ -211,11 +210,11 @@
     <Content Include="Content\Images\Logos\Turkish-Airlines-Logo.png" />
     <Content Include="Content\Images\Logos\Vueling-Airlines-Logo.png" />
     <Content Include="Content\Images\Main_Flights_Search.jpg" />
-    <Content Include="Content\Images\Main_Flights_Search1.jpg" />
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\owl.theme.default.min.css" />
     <Content Include="Content\Images\refresh.png" />
+    <Content Include="Content\shop-homepage.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themify-icons.css" />
     <Content Include="favicon.ico" />
@@ -256,6 +255,8 @@
     <Content Include="fonts\themify-icons\themify.ttf" />
     <Content Include="fonts\themify-icons\themify.woff" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\google_map.js" />
@@ -284,6 +285,7 @@
     <Content Include="Scripts\SearchFlights\prepareHomePage.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sweetalert2.js" />
+    <Content Include="Views\Page\deals.html" />
     <Content Include="Views\Page\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -323,6 +325,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
   </ItemGroup>
   <ItemGroup>

@@ -187,6 +187,11 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\animate.css" />
+    <Content Include="Content\card.css" />
+    <Content Include="Content\card1.css" />
+    <Content Include="Content\Images\background-deals.jpg" />
+    <Content Include="Content\Images\background-deals2.jpg" />
+    <Content Include="Content\Images\background-deals3.jpg" />
     <Content Include="Content\Images\background.jpg" />
     <Content Include="Content\bootstrap-datepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -195,9 +200,39 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\icomoon.css" />
-    <Content Include="Content\Images\Depar Flight.gif" />
+    <Content Include="Content\Images\card_place_holder.png" />
+    <Content Include="Content\Images\Countries_Pictures\China-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\China-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\China-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\England-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\England-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\England-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\India-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\India-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\India-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Iran-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Iran-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Iran-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Ireland-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Ireland-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Ireland-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Israel-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Israel-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Israel-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Japan-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Japan-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Japan-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\{{getCountryNameById%28%24index%29}}.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Spain-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Spain-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Spain-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Turkey-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Turkey-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Turkey-picture2.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Usa-picture0.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Usa-picture1.jpg" />
+    <Content Include="Content\Images\Countries_Pictures\Usa-picture2.jpg" />
     <Content Include="Content\Images\Depar_Flight.jpg" />
-    <Content Include="Content\Images\Depar_Flight1.jpg" />
     <Content Include="Content\Images\Land_Flight.jpg" />
     <Content Include="Content\Images\Logos\Air-India-Logo.png" />
     <Content Include="Content\Images\Logos\All-Nippon-Airways-Logo.png" />
@@ -211,11 +246,17 @@
     <Content Include="Content\Images\Logos\Turkish-Airlines-Logo.png" />
     <Content Include="Content\Images\Logos\Vueling-Airlines-Logo.png" />
     <Content Include="Content\Images\Main_Flights_Search.jpg" />
-    <Content Include="Content\Images\Main_Flights_Search1.jpg" />
+    <Content Include="Content\Images\Vacations\vacation0.jpg" />
+    <Content Include="Content\Images\Vacations\vacation1.jpg" />
+    <Content Include="Content\Images\Vacations\vacation2.jpg" />
+    <Content Include="Content\Images\Vacations\vacation3.jpg" />
+    <Content Include="Content\Images\Vacations\vacation4.jpg" />
+    <Content Include="Content\Images\Vacations\vacation5.jpg" />
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\owl.theme.default.min.css" />
     <Content Include="Content\Images\refresh.png" />
+    <Content Include="Content\deals-style.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themify-icons.css" />
     <Content Include="favicon.ico" />
@@ -255,9 +296,17 @@
     <Content Include="fonts\themify-icons\themify.eot" />
     <Content Include="fonts\themify-icons\themify.ttf" />
     <Content Include="fonts\themify-icons\themify.woff" />
+    <Content Include="Scripts\Angular\angular-route.js" />
+    <Content Include="Scripts\Angular\angular.js" />
+    <Content Include="Scripts\Angular\card.js" />
+    <Content Include="Scripts\DealsPage\Pagination.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DealsPage\BootstrapApp.js" />
+    <Content Include="Scripts\DealsPage\Deals.ctrl.js" />
     <Content Include="Scripts\google_map.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -284,6 +333,7 @@
     <Content Include="Scripts\SearchFlights\prepareHomePage.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sweetalert2.js" />
+    <Content Include="Views\Page\deals.html" />
     <Content Include="Views\Page\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -323,6 +373,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
   </ItemGroup>
   <ItemGroup>

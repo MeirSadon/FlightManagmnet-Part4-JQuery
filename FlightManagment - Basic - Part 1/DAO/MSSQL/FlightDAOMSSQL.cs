@@ -316,6 +316,7 @@ namespace FlightManagment___Basic___Part_1
                 addFilter.Invoke($" Remaining_Tickets > 0 ");
             }
 
+
             using (SqlConnection conn = new SqlConnection(FlyingCenterConfig.CONNECTION_STRING))
             {
                 conn.Open();

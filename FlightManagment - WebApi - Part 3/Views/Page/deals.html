@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="dealsApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gooooood</title>
+
+    <!-- AngularJs + BootstrapApp -->
+    <script src="../../Scripts/Angular/angular.js"></script>
+    <script src="../../Scripts/Angular/angular-route.js"></script>
+    <script src="../../Scripts/DealsPage/BootstrapApp.js"></script>
+
+    <!-- Accessories -->
+    <script src="../../Scripts/jquery-3.3.1.js"></script>
+    <script src="../../Scripts/moments.js"></script>
+    <script src="../../Scripts/DealsPage/Pagination.js"></script>
+
+    <!--Controllers-->
+    <script src="../../Scripts/DealsPage/Deals.ctrl.js"></script>
+    <script src="../../Scripts/Angular/card.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../Content/bootstrap.css" rel="stylesheet">
+    <link href="../../Content/card1.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/style.css">
+
+    <script language="javascript">
+        function setImageSrc(id) {
+            var img1 = document.getElementById(id);
+            img1.src = `../../Content/Images/Vacations/vacation${parseInt(Math.random() * 5)}.jpg`;
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url('../../Content/Images/background-deals3.jpg');">
+        <div class="gtco-loader"></div>
+
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="gtco-logo">
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <a class="navbar-brand" href="#" ><h3 style="color: white;">LET'S FLY.</h3></a>
+                                </div>
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#" >All Flights</a></li>
+                                    <li><a href="#" >Departures</a></li>
+                                    <li><a href="#" >Landings</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="container col-lg-4" style="margin-top:100px;">
+
+            <div class="row">
+
+            </div>
+        </div>
+        <div class="container" style="margin-top:100px;">
+
+            <div class="row">
+
+                <div class="col-lg-8">
+
+                    <!--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture0.jpg" alt="First slide" style="height:300px; width:100%;">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture2.jpg" alt="Second slide" style="height:300px; width:100%;">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture1.jpg" alt="Third slide" style="height:300px; width:100%;">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>-->
+
+                    <div style="overflow-x:auto; max-height: 800px; padding:40px; background-color:sandybrown; opacity: 0.8;">
+                        <div ng-controller="dealsCtrl">
+                            <div ng-repeat="flight in allFlights" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+
+                                <section class="wrapper">
+
+
+                                    <!-- BEGIN: card -->
+                                    <div class="card" data-effect="zoom">
+                                        <button class="card__save  js-save" type="button">
+                                            <i class="fa  fa-bookmark"></i>
+                                        </button>
+                                        <figure class="card__image">
+                                            <img src="setImageSrc(ad)" id="ad" alt="Short description">
+                                        </figure>
+                                        <div class="card__header">
+                                            <figure class="card__profile">
+                                                <img class="cntr-img" src="../../Content/Images/Countries_Pictures/Israel-picture{{}}.jpg" alt="Short description" />
+                                            </figure>
+                                        </div>
+                                        <div class="card__body">
+                                            <h3 class="card__name">{{getCountryNameById($index)}}</h3>
+                                            <p class="card__job">{{getSubTitle($index)}}</p>
+                                            <p class="card__bio">{{getFlightDetails($index)}}</p>
+                                        </div>
+                                    </div>
+                                    <!-- END: card -->
+
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- /.container -->
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/Scripts/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

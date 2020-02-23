@@ -13,5 +13,10 @@ namespace FlightManagment___WebApi___Part_3.Controllers
         {
             return new FilePathResult("~/Views/Page/index.html", "text/html");
         }
+
+        public ActionResult Deals()
+        {
+            return new FilePathResult("~/Views/Page/deals.html", "text/html");
+        }
     }
 }

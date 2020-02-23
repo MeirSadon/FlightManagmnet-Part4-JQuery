@@ -83,7 +83,7 @@ function printFlightsOnTable(data, ajaxIsSuccess){
             flight = JSON.parse(JSON.stringify(flight))
             switch(searchState){
                 case 1:
-                    $("#matchesFlightsTable").append(`<tr> <td  style="border-left: 9px solid gray"> ${flight.Id} </td><td> style="max-height:40px;"> <img src="../../Content/Images/Logos/${flight.airlineName}-Logo.png" alt="${flight.airlineName}" style="height:30px; width:60px; margin:3px"></img>${flight.airlineName}</td><td>${flight.originCountry}</td><td>${flight.destinationCountry}</td>
+                    $("#matchesFlightsTable").append(`<tr> <td  style="border-left: 9px solid gray"> ${flight.Id} </td><td style="max-height:40px;"> <img src="../../Content/Images/Logos/${flight.airlineName}-Logo.png" alt="${flight.airlineName}" style="height:30px; width:60px; margin:3px"></img>${flight.airlineName}</td><td>${flight.originCountry}</td><td>${flight.destinationCountry}</td>
                                 <td> <div class=${flight.deparStatus == "Delayed" ? "delayed-flights" : ""}>${moment(flight.Departure_Time).format('DD-MM-YYYY - HH:mm')}</div></td><td class=${flight.Remaining_Tickets <= 10 ? 'no-tickets' : ""}>${flight.Remaining_Tickets > 0 ? flight.Remaining_Tickets : '-'}</td><td class=${flight.deparStatus == "On-Time" ? 'ontime-status' : 'delayed-status'}>${flight.deparStatus}</td></tr>`)
                     break;
                 case 2:

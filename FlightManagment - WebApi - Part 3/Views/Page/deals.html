@@ -10,38 +10,42 @@
 
     <title>Gooooood</title>
 
-    <!-- AngularJs + BootstrapApp -->
+    <!-- AngularJs -->
     <script src="../../Scripts/Angular/angular.js"></script>
     <script src="../../Scripts/Angular/angular-route.js"></script>
+
+    <!-- Bootstrap-ForApp -->
     <script src="../../Scripts/DealsPage/BootstrapApp.js"></script>
+
+    <!-- Services -->
+    <script src="../../../Scripts/Angular/Services/data.service.js"></script>
+    <script src="../../../Scripts/Angular/Services/globalConst.service.js"></script>
+    <script src="../../../Scripts/Angular/Services/apiService.service.js"></script>
+
+
+    <!--Controllers-->
+    <script src="../../Scripts/DealsPage/deals.ctrl.js"></script>
+    <script src="../Scripts/DealsPage/cusreg.ctrl.js"></script>
+    <script src="../Scripts/DealsPage/cmpreg.ctrl.js"></script>
+
 
     <!-- Accessories -->
     <script src="../../Scripts/jquery-3.3.1.js"></script>
     <script src="../../Scripts/moments.js"></script>
     <script src="../../Scripts/DealsPage/Pagination.js"></script>
 
-    <!--Controllers-->
-    <script src="../../Scripts/DealsPage/Deals.ctrl.js"></script>
-    <script src="../../Scripts/Angular/card.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="../../Content/bootstrap.css" rel="stylesheet">
-    <link href="../../Content/card1.css" rel="stylesheet">
+    <link href="../../Content/card.css" rel="stylesheet">
     <link rel="stylesheet" href="/Content/style.css">
-
-    <script language="javascript">
-        function setImageSrc(id) {
-            var img1 = document.getElementById(id);
-            img1.src = `../../Content/Images/Vacations/vacation${parseInt(Math.random() * 5)}.jpg`;
-        }
-    </script>
 
 
 </head>
 
 <body>
     <!-- Navigation -->
-    <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url('../../Content/Images/background-deals3.jpg');">
+    <header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url('../../Content/Images/background-deals.jpg');">
         <div class="gtco-loader"></div>
 
         <div class="gtco-container">
@@ -51,12 +55,12 @@
                         <nav class="navbar navbar-inverse">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="#" ><h3 style="color: white;">LET'S FLY.</h3></a>
+                                    <a class="navbar-brand" href="#"><h3 style="color: white;">LET'S FLY.</h3></a>
                                 </div>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="#" >All Flights</a></li>
-                                    <li><a href="#" >Departures</a></li>
-                                    <li><a href="#" >Landings</a></li>
+                                    <li><a href="#">All Flights</a></li>
+                                    <li><a href="#">Departures</a></li>
+                                    <li><a href="#">Landings</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -64,6 +68,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="overlay"></div>
 
         <!-- Page Content -->
         <div class="container col-lg-4" style="margin-top:100px;">
@@ -76,38 +82,12 @@
 
             <div class="row">
 
-                <div class="col-lg-8">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-                    <!--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                                <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture0.jpg" alt="First slide" style="height:300px; width:100%;">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture2.jpg" alt="Second slide" style="height:300px; width:100%;">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture1.jpg" alt="Third slide" style="height:300px; width:100%;">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>-->
-
-                    <div style="overflow-x:auto; max-height: 800px; padding:40px; background-color:sandybrown; opacity: 0.8;">
+                <div class="card__tab"></div>
+                    <div class="card__cover">
                         <div ng-controller="dealsCtrl">
-                            <div ng-repeat="flight in allFlights" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div ng-if="matchingVacancyFlights.length > 0" ng-repeat="flight in matchingVacancyFlights" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 
                                 <section class="wrapper">
 
@@ -118,17 +98,17 @@
                                             <i class="fa  fa-bookmark"></i>
                                         </button>
                                         <figure class="card__image">
-                                            <img src="setImageSrc(ad)" id="ad" alt="Short description">
+                                            <img ng-src="../../Content/Images/Countries_Pictures/{{flight.destinationCountry}}-picture{{$index % 3}}.jpg" alt="Short description">
                                         </figure>
                                         <div class="card__header">
                                             <figure class="card__profile">
-                                                <img class="cntr-img" src="../../Content/Images/Countries_Pictures/Israel-picture{{}}.jpg" alt="Short description" />
+                                                <img ng-src="../../Content/Images/Flags/{{flight.destinationCountry.toLowerCase()}}.png" alt="" style="height:100%; width:100%; border-radius:30px;" />
                                             </figure>
                                         </div>
                                         <div class="card__body">
-                                            <h3 class="card__name">{{getCountryNameById($index)}}</h3>
-                                            <p class="card__job">{{getSubTitle($index)}}</p>
-                                            <p class="card__bio">{{getFlightDetails($index)}}</p>
+                                            <h3 class="card__name">{{flight.destinationCountry}}</h3>
+                                            <p class="card__subtitle">{{flight.subTitle}}</p>
+                                            <p class="card__details">{{flight.details}}</p>
                                         </div>
                                     </div>
                                     <!-- END: card -->
@@ -158,3 +138,34 @@
 </body>
 
 </html>
+
+
+
+
+
+<!--<div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture0.jpg" alt="First slide" style="height:300px; width:100%;">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture2.jpg" alt="Second slide" style="height:300px; width:100%;">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="../../Content/Images/Countries_Pictures/israel-picture1.jpg" alt="Third slide" style="height:300px; width:100%;">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>-->

@@ -1402,6 +1402,7 @@
     <Content Include="Scripts\Angular\Services\apiService.service.js" />
     <Content Include="Scripts\Angular\Services\data.service.js" />
     <Content Include="Scripts\Angular\Services\globalConst.service.js" />
+    <Content Include="Scripts\DealsPage\cmpreg.ctrl.js" />
     <Content Include="Scripts\DealsPage\Pagination.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -1436,6 +1437,7 @@
     <Content Include="Scripts\SearchFlights\prepareHomePage.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sweetalert2.js" />
+    <Content Include="Scripts\DealsPage\cusreg.ctrl.js" />
     <Content Include="Views\Page\deals.html" />
     <Content Include="Views\Page\index.html" />
     <Content Include="Web.config" />

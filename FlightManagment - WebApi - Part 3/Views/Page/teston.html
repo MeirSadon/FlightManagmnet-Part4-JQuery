@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+
+
+    <!-- AngularJs -->
+    <script src="../../Scripts/Angular/angular.js"></script>
+    <script src="../../Scripts/Angular/ui-router.js"></script>
+
+    <!-- Bootstrap-ForApp -->
+    <script src="../../Scripts/DealsPage/BootstrapApp.js"></script>
+
+    <script src="../../../Scripts/DealsPage/router-config.js"></script>
+
+    <!-- Services -->
+    <script src="../../../Scripts/Angular/Services/data.service.js"></script>
+    <script src="../../../Scripts/Angular/Services/globalConst.service.js"></script>
+    <script src="../../../Scripts/Angular/Services/apiService.service.js"></script>
+
+
+    <!--Controllers-->
+    <script src="../../Scripts/DealsPage/deals.ctrl.js"></script>
+    <script src="../Scripts/DealsPage/cusreg.ctrl.js"></script>
+    <script src="../Scripts/DealsPage/cmpreg.ctrl.js"></script>
+
+
+
+
+</head>
+<body>
+    <p>Menu</p><br />
+    <a href="#/deals">Deals</a>
+    <a href="#/customer-register">customer</a>
+    <a href="#/company-register">company</a>
+
+    <div ui-view></div>
+</body>
+</html>

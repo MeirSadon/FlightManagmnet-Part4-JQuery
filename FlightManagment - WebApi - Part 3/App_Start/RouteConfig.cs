@@ -16,7 +16,7 @@ namespace FlightManagment___WebApi___Part_3
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Page", action = "Deals", id = UrlParameter.Optional }
+                defaults: new { controller = "Page", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -11,12 +11,12 @@ namespace FlightManagment___WebApi___Part_3.Controllers
         // GET: Page
         public ActionResult Index()
         {
-            return new FilePathResult("~/Views/Page/index.html", "text/html");
+            return new FilePathResult("~/Views/Page/home-page.html", "text/html");
         }
 
-        public ActionResult Deals()
+        public ActionResult SearchFlight()
         {
-            return new FilePathResult("~/Views/Page/deals.html", "text/html");
+            return new FilePathResult("~/Views/Page/search-flights.html", "text/html");
         }
     }
 }

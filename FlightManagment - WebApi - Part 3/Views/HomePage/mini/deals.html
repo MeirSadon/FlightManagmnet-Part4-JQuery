@@ -1,0 +1,28 @@
+﻿<div class="card__tab"></div>
+<div class="card__cover">
+    <div ng-controller="dealsCtrl">
+        <div ng-if="matchingVacancyFlights.length > 0" ng-repeat="flight in matchingVacancyFlights" class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+
+            <section class="wrapper">
+
+
+                <div class="card" data-effect="zoom">
+                    <figure class="card__image">
+                        <img ng-src="../../Content/Images/Countries_Pictures/{{flight.destinationCountry}}-picture{{$index % 3}}.jpg" alt="Short description">
+                    </figure>
+                    <div class="card__header">
+                        <figure class="card__profile">
+                            <img ng-src="../../Content/Images/Flags/{{flight.destinationCountry.toLowerCase()}}.png" alt="" style="height:100%; width:100%; border-radius:30px;" />
+                        </figure>
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__name">{{flight.destinationCountry}}</h3>
+                        <p class="card__subtitle">{{flight.subTitle}}</p>
+                        <p class="card__details">{{flight.details}}</p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</div>

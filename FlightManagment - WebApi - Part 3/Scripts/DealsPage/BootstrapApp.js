@@ -1,1 +1,1 @@
-﻿const module = angular.module("dealsApp", [])
+﻿const module = angular.module("dealsApp", ["ui.router"])

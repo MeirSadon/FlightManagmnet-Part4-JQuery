@@ -10,7 +10,6 @@ namespace FlightManagment___Basic___Part_1
     {
         long CreateNewAdmin(LoginToken<Administrator> token, Administrator admin);
         long CreateNewAirline(LoginToken<Administrator> token, AirlineCompany airline);
-        long CreateNewCustomer(LoginToken<Administrator> token, Customer customer);
         long CreateNewCountry(LoginToken<Administrator> token, Country country);
 
         void RemoveAdministrator(LoginToken<Administrator> token, Administrator admin);

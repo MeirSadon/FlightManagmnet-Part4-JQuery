@@ -63,27 +63,6 @@ namespace FlightManagment___WebApi___Part_3
         }
         #endregion
 
-        #region Create New Customer.
-        /// <summary>
-        /// Create New Customer.
-        /// </summary>
-        /// <param name="customer"></param>
-        /// <returns>IHttpActionResult</returns>
-        [ResponseType(typeof(Customer))]
-        [Route("create/customer", Name = "CreateNewCustomer")]
-        [HttpPost]
-        public IHttpActionResult CreateNewCustomer([FromBody]Customer customer)
-        {
-            IHttpActionResult result = controllersCenter.ExecuteSafe(() =>
-            {
-                GetLoginToken(User.Identity.Name, out LoginToken<Administrator> myToken, out LoggedInAdministratorFacade myFacade);
-                customer.Customer_Number = myFacade.CreateNewCustomer(myToken, customer);
-                return CreatedAtRoute("GetCustomerById", new { id = customer.Id }, customer);
-            });
-            return result; // for debug - break point here  
-        }
-        #endregion
-
         #region Create New Country.
         /// <summary>
         /// Create New Country.

@@ -37,7 +37,7 @@ namespace TestForFlightManagmentProject
 
             customerFacade = new LoggedInCustomerFacade();
             customerToken = new LoginToken<Customer> { User = new Customer("TestCustomer", "Ben Sadon", "Customer" + GetRandomNameForTestUsers(), "123", "Neria 28", "050", "3317") };
-            adminFacade.CreateNewCustomer(adminToken, customerToken.User);
+            adminFacade.CreateNewCustomer(customerToken.User);
             customerToken.User = adminFacade.GetCustomerByUserName(adminToken, customerToken.User.User_Name);
         }
         #endregion
@@ -134,7 +134,7 @@ namespace TestForFlightManagmentProject
             }
             adminFacade.CreateNewCountry(adminToken, new Country() { Country_Name = "Israel", });
             adminFacade.CreateNewAirline(adminToken, airlineToken.User);
-            adminFacade.CreateNewCustomer(adminToken, customerToken.User);
+            adminFacade.CreateNewCustomer(customerToken.User);
         }
         #endregion
     }

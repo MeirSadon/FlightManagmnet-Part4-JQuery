@@ -22,6 +22,27 @@ namespace FlightManagment___WebApi___Part_3
         private const string DEFAULT_DATE = "2000-01-01 00:00:00.000";
         private ControllersCenter controllersCenter = new ControllersCenter();
 
+
+        #region Create New Customer.
+        /// <summary>
+        /// Create New Customer.
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns>IHttpActionResult</returns>
+        [ResponseType(typeof(Customer))]
+        [Route("create/customer", Name = "CreateNewCustomer")]
+        [HttpPost]
+        public IHttpActionResult CreateNewCustomer([FromBody]Customer customer)
+        {
+            IHttpActionResult result = controllersCenter.ExecuteSafe(() =>
+            {
+                customer.Customer_Number = facade.CreateNewCustomer(customer);
+                return Ok("You Have Successfully Signed Up !! You Only Have To Verify Your Email.");
+            });
+            return result; // for debug - break point here  
+        }
+        #endregion
+
         #region Get Company By Id.
         /// <summary>
         /// Get Company By Id.

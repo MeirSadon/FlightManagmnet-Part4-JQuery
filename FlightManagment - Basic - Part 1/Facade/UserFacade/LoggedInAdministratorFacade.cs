@@ -64,32 +64,6 @@ namespace FlightManagment___Basic___Part_1
             return airlineNumber;
         }
 
-        // Create New Customer.
-        public long CreateNewCustomer(LoginToken<Administrator> token, Customer customer)
-        {
-            long customerNumber = 0;
-            if (UserIsValid(token) && customer != null)
-            {
-                User customerUser = _userDAO.GetUserById(customer.Id);
-                if (customerUser == null)
-                {
-                    _userDAO.AddUserName(new User(customer.User_Name, customer.Password, UserType.Customer), out long userId);
-                    customer.Id = userId;
-                    customerNumber = _customerDAO.Add(customer);
-                    _backgroundDAO.AddNewAction(Categories.Customers | Categories.Adds, $"Admin {token.User.User_Name} Tried To Create New Customer. Id: {customer.Id} ({customer.User_Name}).", true);
-
-                }
-                else
-                {
-                    _backgroundDAO.AddNewAction(Categories.Customers | Categories.Adds, $"Admin {token.User.User_Name} Tried To Create New Customer. Id: {customer.Id} ({customer.User_Name}).", false);
-                    throw new UserAlreadyExistException($"Sorry, But '{customer.User_Name}' Already Exist.");
-                }
-            }
-            else
-                _backgroundDAO.AddNewAction(Categories.Customers | Categories.Adds, $"Anonymous User Tried To Create New Customer. Id: {customer.Id} ({customer.User_Name}).", false);
-            return customerNumber;
-        }
-
         // Create New Country.
         public long CreateNewCountry(LoginToken<Administrator> token, Country country)
         {

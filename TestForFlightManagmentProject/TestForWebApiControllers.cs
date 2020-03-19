@@ -79,7 +79,7 @@ namespace TestForFlightManagmentProject
         {
             LoggedInAdministratorFacade adminFacade = new LoggedInAdministratorFacade();
             Customer customer = CreateRandomCustomer();
-            customer.Customer_Number = adminFacade.CreateNewCustomer(FlyingCenterConfig.basicToken, customer);
+            customer.Customer_Number = adminFacade.CreateNewCustomer(customer);
             string customerToken = GetTokenAsync(new User(customer.User_Name, customer.Password, UserType.Customer));
             Customer afterUpdateCustomer = new Customer(customer.Customer_Number, customer.Id, "Changed", "Changed", "Changed", "Changed", "Changed", "Changed", "Changed");
             UpdateDetailsForCustomer(customerToken, updateCustomerDetailsUrl, afterUpdateCustomer);

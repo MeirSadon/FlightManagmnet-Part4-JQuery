@@ -76,7 +76,7 @@ namespace TestForFlightManagmentProject
         public void TicketNotMatchWhenTryGetTicketThatNotMatchToCurrentCustomer()
         {
             Customer customer = CreateRandomCustomer();
-            customer.Customer_Number = adminFacade.CreateNewCustomer(adminToken, customer);
+            customer.Customer_Number = adminFacade.CreateNewCustomer(customer);
             FlyingCenterSystem.GetUserAndFacade(customer.User_Name, "123", out ILogin token, out FacadeBase facade);
             LoginToken<Customer> newToken = token as LoginToken<Customer>;
             LoggedInCustomerFacade newfacade = facade as LoggedInCustomerFacade;

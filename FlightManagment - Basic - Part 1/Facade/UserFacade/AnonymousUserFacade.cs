@@ -10,8 +10,29 @@ namespace FlightManagment___Basic___Part_1
     public class AnonymousUserFacade : FacadeBase, IAnonymousUserFacade
     {
 
-        private const string DEFAULT_DATE = "2000-01-01 00:00:00.000";
+        // Create New Customer.
+        public long CreateNewCustomer(Customer customer)
+        {
+            long customerNumber = 0;
+            if (customer != null)
+            {
+                User customerUser = _userDAO.GetUserById(customer.Id);
+                if (customerUser == null)
+                {
+                    _userDAO.AddUserName(new User(customer.User_Name, customer.Password, UserType.Customer), out long userId);
+                    customer.Id = userId;
+                    customerNumber = _customerDAO.Add(customer);
+                    _backgroundDAO.AddNewAction(Categories.Customers | Categories.Adds, $"A New Customer Has Submitted a Registration Request To The System. Id: {customer.Id} ({customer.User_Name}).", true);
 
+                }
+                else
+                {
+                    _backgroundDAO.AddNewAction(Categories.Customers | Categories.Adds, $"A New Customer Has Submitted a Registration Request To The System.", false);
+                    throw new UserAlreadyExistException($"Sorry, But '{customer.User_Name}' Already Exist.");
+                }
+            }
+            return customerNumber;
+        }
         // Search Airline Company By Id.
         public AirlineCompany GetAirlineById(int id)
         {

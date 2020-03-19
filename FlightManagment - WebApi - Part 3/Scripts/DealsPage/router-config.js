@@ -24,6 +24,6 @@ module.config(function ($stateProvider, $urlRouterProvider) {
             controller: "cmpRegCtrl"
         })
 
-    $urlRouterProvider.when("", "/deals");
+    $urlRouterProvider.when("", "/customer-register");
     //$urlRouterProvider.otherwise('/404');
 });

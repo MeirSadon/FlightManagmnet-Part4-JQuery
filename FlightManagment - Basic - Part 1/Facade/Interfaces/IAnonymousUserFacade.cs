@@ -9,6 +9,8 @@ namespace FlightManagment___Basic___Part_1
     // Interface For Anonymous User (And Over).
     public interface IAnonymousUserFacade
     {
+        long CreateNewCustomer(Customer customer);
+
         AirlineCompany GetAirlineById(int id);
         AirlineCompany GetAirlineByAirlineName(string airlineName);
         IList<AirlineCompany> GetAllAirlineCompanies();

@@ -10,19 +10,20 @@ namespace TestForFlightManagmentProject
     {
         /*  ======= All Tests =======
 
-        1. GetAirlineById                 -- GetAirlineById.
-        2. GetAirlineByAirlineName        -- GetAirlineCompanyByCompanyName
-        3. GetAllAirlineCompanies         -- GetAllArlineCompanies.
-        4. GetFlightById                  -- GetFlightById.
-        5. GetAllFlightsVacancy           -- GetAllFlightsVacancy.
-        6. GetFlightsByDepatrureDate      -- GetFlightsByFromDepartureDate.
-        7. GetFlightsByLandingDate        -- GetFlightsByUpToLandingDate.
-        8. GetFlightsByOriginCountry      -- GetFlightsByOriginCountry.
-        9. GetFlightsByDestinationCountry -- GetFlightsByDestinationCountry.
-        10. GetAllFlights                  -- GetAllFlights.
-        11.GetCountryById                 -- GetCountryById.
-        12.GetCountryByName               -- GetCountryByName.
-        13.GetAllCountries                -- GetAllCountries.
+        1. CreateNewCustomer               -- "TestLogin Class" (LoginSuccesfullyAsCustomer).
+        2. GetAirlineById                 -- GetAirlineById.
+        3. GetAirlineByAirlineName        -- GetAirlineCompanyByCompanyName
+        4. GetAllAirlineCompanies         -- GetAllArlineCompanies.
+        5. GetFlightById                  -- GetFlightById.
+        6. GetAllFlightsVacancy           -- GetAllFlightsVacancy.
+        7. GetFlightsByDepatrureDate      -- GetFlightsByFromDepartureDate.
+        8. GetFlightsByLandingDate        -- GetFlightsByUpToLandingDate.
+        9. GetFlightsByOriginCountry      -- GetFlightsByOriginCountry.
+        10. GetFlightsByDestinationCountry -- GetFlightsByDestinationCountry.
+        11. GetAllFlights                  -- GetAllFlights.
+        12.GetCountryById                 -- GetCountryById.
+        13.GetCountryByName               -- GetCountryByName.
+        14.GetAllCountries                -- GetAllCountries.
 
         ======= All Tests ======= */
 

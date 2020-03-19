@@ -89,7 +89,7 @@ namespace TestForFlightManagmentProject
         public void WrongPasswordWhenTryLoginAsCustomer()
         {
             Customer customer = CreateRandomCustomer();
-            adminFacade.CreateNewCustomer(adminToken, customer);
+            adminFacade.CreateNewCustomer(customer);
             FlyingCenterSystem.GetUserAndFacade(customer.User_Name, "ErrorPassword", out ILogin token, out FacadeBase facade);
         }
 
@@ -98,7 +98,7 @@ namespace TestForFlightManagmentProject
         public void LoginSuccesfullyAsCustomer()
         {
             Customer customer = CreateRandomCustomer();
-            adminFacade.CreateNewCustomer(adminToken, customer);
+            adminFacade.CreateNewCustomer(customer);
             FlyingCenterSystem.GetUserAndFacade(customer.User_Name, "123", out ILogin token, out FacadeBase facade);
             LoggedInCustomerFacade newCustomerFacade = facade as LoggedInCustomerFacade;
             Assert.AreNotEqual(customer, null);
@@ -109,7 +109,7 @@ namespace TestForFlightManagmentProject
         public void GetAnonymousUserFacade()
         {
             Customer customer = CreateRandomCustomer();
-            adminFacade.CreateNewCustomer(adminToken, customer);
+            adminFacade.CreateNewCustomer(customer);
             FlyingCenterSystem.GetUserAndFacade(customer.User_Name, "123", out ILogin token, out FacadeBase facade);
             LoginToken<IUser> myToken = token as LoginToken<IUser>;
             Assert.AreEqual(myToken, null);

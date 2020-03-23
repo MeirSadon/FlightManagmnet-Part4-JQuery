@@ -2,19 +2,13 @@
 
 function CreateApiService($http, dataService, globalConst) {
 
-    this.getAllCountries = () => {
-        return $http.get(globalConst.get_all_countries_url)
-            .then(
-                (resp) => {
-                    dataService.allCountries = resp.data
-                },
-                // error
-                (err) => {
-                    alert('error')
-                    console.log(err)
-                }
-            )
-    }
+
+    this.getCountryStates = (url) => {
+        if (url != globalConst.getStatesBasicUrl + "Choose Country") {
+            return $.ajax({ url: url})
+            }
+        }
+
     this.getAllItems = (url) => {
         //Get All Countries.
                 return $http.get(globalConst.get_all_countries_url)
@@ -39,7 +33,6 @@ function CreateApiService($http, dataService, globalConst) {
                                     alert('error')
                                     console.log(err)
                                 })})}
-
 
     function takeInfoOnSucReq(data) {
         
@@ -77,21 +70,4 @@ function CreateApiService($http, dataService, globalConst) {
 
         return this.sentencesToSubject[index % 4]
     }
-
-
-
 }
-
-    //this.getMatchingFlights = (url) => {
-    //    return $http.get(url)
-    //        .then(
-    //            (resp) => {
-    //                dataService.matchingVacancyFlights = resp.data
-    //                takeInfoOnSucReq(resp.data)
-    //        },
-    //        (err) => {
-    //            alert('error')
-    //            console.log(err)
-    //        }
-    //    )
-    //}

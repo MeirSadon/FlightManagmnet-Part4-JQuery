@@ -54,9 +54,30 @@
                     <span class="focus-input100"></span>
                 </div>
 
+                <span class="label-input100">Address</span>
+                <select class="input100" id="countryId" name="country" ng-model="form.address.country" required="required"
+                        ng-options="country for country in allCountries" ng-init="form.address.country=allCountries[0]" ng-change="updateStatesSelect"> </select>
+                <select class="input100" id="stateId" name="state" ng-model="form.address.state" required="required"
+                        ng-options="state for state in countryStates" ng-init="form.address.state=countryStates[0]"> </select>
+                <select class="input100" id="cityId" name="city" ng-model="form.address.city" required="required"
+                        ng-options="city for city in stateCities" ng-init="form.address.city=stateCities[0]"></select>
+               
+                <div id="address-validate" class="wrap-input100 validate-input" data-validate="Country, State And City Address is required">
+
+
+
+                    <span class="focus-input100"></span>
+                </div>
+
                 <div id="pass-validate" class="wrap-input100 validate-input" data-validate="Password must contain at least 8 characters with one uppercase letter, one lowercase letter, number and special character">
                     <span class="label-input100">Password</span>
                     <input class="input100" type="password" id="pass-input" name="pass" ng-model="form.password" placeholder="*************" autocomplete="on" required="required">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div id="card-validate" class="wrap-input100 validate-input">
+                    <span class="label-input100">Credit Card</span>
+                    <input class="input100" type="number" id="card-input" name="card" ng-model="form.card" placeholder="Your Number Card...">
                     <span class="focus-input100"></span>
                 </div>
 

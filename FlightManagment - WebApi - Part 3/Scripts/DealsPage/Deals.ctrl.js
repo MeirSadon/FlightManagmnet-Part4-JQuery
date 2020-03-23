@@ -11,23 +11,6 @@ function DealsCtrl($scope, dataService, apiService) {
         $scope.matchingVacancyFlights = dataService.matchingVacancyFlights
     })
 
-    // Get All Countries From ApiService(Ajax)
-    //apiService.getAllCountries().then(() => {
-    //    $scope.allCountries = dataService.allCountries
-    //})
-
-
-    //$scope.getCountryNameById = ($index) => {
-    //    const country = $scope.allCountries.find(({ Id }) => Id == $scope.allFlights[$index].Destination_Country_Code)
-    //    return country != undefined ? country.Country_Name : "????"
-    //}
-
-
-
-    //$scope.getDepartureDate = ($index) => {
-    //    return $scope.allFlights[$index].Departure_Time
-    //}
-
     $scope.getFlightDetails = ($index) => {
         const currentFlight = $scope.allFlights[$index]
         return `The flight to ${$scope.allCountries.find(({ Id }) => Id == currentFlight.Destination_Country_Code).Country_Name} will depart on ${moment(currentFlight.Departure_Time).format('ll')}

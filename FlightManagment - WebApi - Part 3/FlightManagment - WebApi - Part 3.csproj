@@ -1439,6 +1439,7 @@
     <Content Include="Scripts\DealsPage\custRegForm\animsition.min.js" />
     <Content Include="Scripts\DealsPage\custRegForm\bootstrap.min.js" />
     <Content Include="Scripts\DealsPage\custRegForm\countdowntime.js" />
+    <Content Include="Scripts\DealsPage\custRegForm\countriesStatesCities.js" />
     <Content Include="Scripts\DealsPage\custRegForm\daterangepicker.js" />
     <Content Include="Scripts\DealsPage\custRegForm\jquery-3.2.1.min.js" />
     <Content Include="Scripts\DealsPage\custRegForm\main.js" />
